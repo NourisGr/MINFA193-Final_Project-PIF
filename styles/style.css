@@ -1,0 +1,43 @@
+.room {
+    border-radius: 6px;
+    padding: 25% 12.5% 25% 12.5%;
+    margin: 5%; 
+}
+
+.open {
+    background-color: #61be41;
+    border: 6px solid #53b033;
+}
+
+.closed {
+    background-color: #DC3545;
+    border: 6px solid #ab3540;
+}
+
+.conference-rooms {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 0px 0px; 
+    margin: 1% 2% 1% 2%;
+}
+
+.conference-rooms > div:hover {
+    cursor: pointer;
+}
+
+.conference-rooms > div {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1280px) {
+    .conference-rooms {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .conference-rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

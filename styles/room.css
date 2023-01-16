@@ -1,0 +1,122 @@
+.room-model-container {
+    width: 100%;
+    height: 81vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room-days-container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    place-items: center;
+    gap: 4vh 0px; 
+    width: 100%;
+    height: 100%;   
+}
+
+.room-title {
+    margin: 1.25% 0 1.25% 0;
+    color: #5579a7;
+    font-size: 1.75rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+
+.room-title:hover {
+    transition: 0.2s;
+    border-bottom: 4px solid #5579a7;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.room-model { 
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #0088a9;
+    border-radius: 6px;
+    padding: 0;
+}
+
+.room-time {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4vh;
+    font-weight: 600;
+    color: #e6e6e6;
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    padding: 0;
+}
+
+.unreserved {
+    background-color: #61be41;
+    border: 6px solid #53b033;
+}
+
+.reserved {
+    background-color: #DC3545;
+    border: 6px solid #ab3540;
+}
+
+.past-room {
+    background-color: #4a4948;
+    border: 6px solid #424241;
+}
+
+.date-text, .annotation {
+    margin: 1.5% 0 1.5% 0;
+    color: #5579a7;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border-bottom: 4px solid #5579a7;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.annotation {
+    font-size: 1rem;
+    margin: 0.2%;
+}
+
+.room-number, .room-capacity, .room-description {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #626363;
+
+}
+
+.room-model-container {
+    width: 100%;
+    height: 100%;
+}
+
+.room-data-container {
+    margin-bottom: 2%;
+    padding: 1.5%;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #5579a7;
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .room-days-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
