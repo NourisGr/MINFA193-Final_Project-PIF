@@ -1,5 +1,4 @@
 <?php
-    echo "test";
     function handleLoginRequest() {
         // Initialize session if it's not already initialized.
         if (session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
@@ -34,7 +33,7 @@
             // Setup SQL Query
             $sql = "SELECT DISTINCT * FROM employees WHERE email = '%s'";
             $sql = sprintf($sql, $email);
-            echo $sql;
+
             // Execute SQL Query
             $result = $conn->query($sql);
             $pwd_equals = false;

@@ -14,19 +14,24 @@
             // Retrieve variables from form post using 'name' input attribute
             // We can directly derive their values because a check was made previously.
             
+            // $username = $_POST['username'];
             $firstname = $_POST['firstname'];
             $lastname = $_POST['surname'];
             $email = $_POST['email'];
             $rfid = $_POST['rfid'];
+            $img = $_POST['picture'];
 
             if (!empty($_POST['email'])) {
-                $sql = "SELECT DISTINCT * from eployees WHERE email = '%s'";
+                $sql = "SELECT DISTINCT * from employees WHERE email = '%s'";
                 $sql = sprintf($sql, $email);
+
                 if ($conn->query($sql)) {
                     return;
                 }
+
                 $sql = "UPDATE employees SET email = '%s' WHERE email = '%s'";
                 $sql = sprintf($sql, $email, $_SESSION['email']);
+
                 if ($conn->query($sql)) {
                     $_SESSION['email'] = $email;
                 }

@@ -66,9 +66,16 @@ body {
 }  
 
 .register-box .user-box input:focus ~ label,
-.register-box .user-box input:valid ~ label {
+.register-box .user-box input:valid ~ label,
+.register-box .user-box input[type='email']:invalid:not(empty) ~ label {
     top: -20px;
     color: #03e9f4;
+    font-size: 0.85rem;
+}
+
+.register-box .user-box input[type='email']:not(:focus) ~ label {
+    color: white !important;
+    top: -20px;
     font-size: 0.85rem;
 }
   
@@ -138,4 +145,34 @@ body {
 .redirect-a:hover {
     color: #367ef1;
     text-decoration: underline;
+}
+
+.form-select {
+    margin-top: 4%;
+    position: relative;
+}
+
+.form-select select {
+    display: none;
+}
+
+.form-select option {
+    font-size: 0.8rem;
+    font-weight: 550;
+    font-family: "Montserrat", sans-serif;
+}
+
+.rfid-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.rfid-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #144da7;
+    font-family: "Montserrat", sans-serif;
 }

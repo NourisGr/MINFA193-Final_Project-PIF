@@ -4,6 +4,7 @@
         session_start();
     }
 
+    // If session is already set, go back to index
     if (isset($_SESSION['email'])) {
         header('Location: ./index.php');
     }
@@ -15,6 +16,7 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="styles/register.css">
     <script>
+        // Verify user input, on the client side.
         function verifyLogin(event) {
             const error_element = document.querySelector(".error-msg");
             error_element.innerHTML = "";
@@ -30,7 +32,7 @@
 <body>
     <div class="register-box">
         <h2>Login</h2>
-        <form method="POST" action="./php/login_post">
+        <form method="POST" action="./php/login_post.php">
             <div class="user-box">
                 <input type="email" name="email" required autocomplete="off">
                 <label>Email Address</label>
@@ -46,7 +48,7 @@
                 <input type="submit" value="Login" onclick="verifyLogin(event);"> 
             </div>
             <div class="redirect-container">
-                <span class="redirect-txt">Don't have an account? <a href="./register.php" class="redirect-a">Make one now.</a></span>
+                <span class="redirect-txt">Don't have an account? <a href="./register.php" class="redirect-a">Create one now.</a></span>
             </div>
         </form>
     </div>

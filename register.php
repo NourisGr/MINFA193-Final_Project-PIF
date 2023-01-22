@@ -3,9 +3,13 @@
         session_start();
     }
 
+    // If session is already set, go back to index.
     if (isset($_SESSION['email'])) {
         header('Location: ./index.php');
     }
+
+    include_once './php/db_connector.php';
+    $conn = connectToDb();
 ?>
 
 <html>
@@ -14,13 +18,16 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="styles/register.css">
     <script>
+        // Verify user input on the client side
         function verifyRegister() {
- 
             const error_element = document.querySelector(".error-msg");
-            const username = document.getElementsByName("username")[0].value;
+            const first_name = document.getElementsByName("first_name")[0].value;
+            const last_name = document.getElementsByName("last_name")[0].value;
 
-            if (username.length < 3 || username.length > 16) {
-               error_element.innerHTML = "Username must be between 3 and 16 characters.";
+            if (first_name.length < 3 || first_name.length > 32) {
+               error_element.innerHTML = "First Name must be between 3 and 32 characters.";
+            } else if(last_name.length < 3 || last_name.length > 32) {
+                error_element.innerHTML = "Last Name must be between 3 and 32 characters.";
             } else {
                 const password = document.getElementsByName("password")[0].value;
                 if (password.length < 4 || password.length > 32) {
@@ -51,9 +58,20 @@
                 <input type="email" name="email" required autocomplete="off">
                 <label>Email Address</label>
             </div>
-            <div class="user-box">
-                <input type="text" name="rfid" required autocomplete="off">
-                <label>RFID Key</label>
+            <div class="user-box rfid-box">     
+                <span class="rfid-text">Your RFID Key</span>
+                <select class="form-select" name="rfid">
+                    <?php
+                        $sqlRFID = $conn->prepare("SELECT * FROM badge WHERE Badgeid NOT IN (SELECT RFIDBadge FROM employees) ORDER BY Badgeid");
+                        $sqlRFID->execute();
+                        $result = $sqlRFID->get_result();
+
+                        while ($row2 = $result->fetch_assoc()) {
+                            $v = $row2["Badgeid"];
+                            echo '<option value="'. $v .'"> '. $v. '</option>';
+                        }
+                    ?>
+                </select>
             </div>
             <div class="error error-off">
                 <span class="error-msg"></span>

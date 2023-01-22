@@ -1,0 +1,35 @@
+.admittion-table {
+    border: 5px solid #24252a;
+    width: 100%;
+    text-align: center;
+    margin: 2%;
+    border-collapse: collapse;
+}
+
+.admittion-form {
+    width: 100%;
+    margin-right: 4%;
+}
+
+.admittion-table tr {
+    border: 2px solid #24252a;
+    padding: 5%;
+}
+
+.admittion-table tr * {
+    padding: 0.5%;
+}
+
+.admit-user {
+    padding: 0.75% 4% 0.75% 4%;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+}
+
+.admittion-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

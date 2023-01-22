@@ -6,8 +6,8 @@
 
 
     // if id does not correspond to a valid conference room, send the user back to the home page.
-    if ($queries['id'] > 50) {
-        header("Location: ./.php");   
+    if ($queries['id'] > 21) {
+        header("Location: ./");   
     }
 ?>
 
