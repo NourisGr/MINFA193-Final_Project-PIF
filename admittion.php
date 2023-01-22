@@ -4,7 +4,7 @@
 
     INCLUDE_ONCE "./php/db_connector.php";
     $db = connectToDb();
-
+// Display all employees with group id = 4
     $sql = "SELECT DISTINCT * FROM EMPLOYEES WHERE `group` = '4';";
     $result = $db->query($sql);
     $to_admit = [];

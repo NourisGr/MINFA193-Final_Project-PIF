@@ -6,7 +6,7 @@
         $hostName = "localhost";
         $userName = "root";
         $password = "";
-        $dbName = "datacorp2";
+        $dbName = "minfa193_datacorp";
         $conn = new mysqli($hostName, $userName, $password, $dbName);
         
         if (!$conn) {

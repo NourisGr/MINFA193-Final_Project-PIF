@@ -1,3 +1,4 @@
+// valudate users credantials 
 function verifyLogin(event) {
     try {
         const error_element = document.querySelector(".error-msg");

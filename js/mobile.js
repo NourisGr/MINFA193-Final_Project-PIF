@@ -1,3 +1,5 @@
+//Create a mobile version using js
+
 const doc = document;
 const menuOpen = doc.querySelector(".menu");
 const menuClose = doc.querySelector(".close");

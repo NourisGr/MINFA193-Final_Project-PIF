@@ -87,13 +87,12 @@
                 $counter = 0;
                 $day_counter = 0;
                 foreach ($period as $dt) {
-                    
                     // if day is weekend, then skip it.
+                    $first = false;
                     if (isWeekend($dt->format("l Y-m-d H:i:s"))) {
                         $day_counter++;
                         continue;
                     }
-                    
                     // create each hour scheme and give it either the unreserved, reserved or past-room status.
                     // unreserved: open for reservation (green)
                     // reserved: already reserved (red)
